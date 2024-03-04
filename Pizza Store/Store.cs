@@ -10,24 +10,29 @@ namespace Pizza_Store
     {
         public void Start()
         {
-            customer customer1 = new customer("Erik");
-            customer customer2 = new customer("Lise");
-            customer customer3 = new customer("Hans");
+            customer erik = new customer("Erik");
+            customer lise = new customer("Lise");
+            customer hans = new customer("Hans");
 
 
-            menuitems pizza1 = new menuitems("1", "Pepperoni", 85);
-            menuitems pizza2 = new menuitems("2", "Margherita", 80);
-            menuitems pizza3 = new menuitems("3", "Kebab", 90);
+            menuitems pepperoni = new menuitems("1", "Pepperoni", 85);
+            menuitems margherita = new menuitems("2", "Margherita", 80);
+            menuitems kebab = new menuitems("3", "Kebab", 90);
 
-            Console.WriteLine($"{customer1.CustomerName} is a member? = {customer1.MembershipStatus}");
-            Console.WriteLine($"{customer2.CustomerName} is a member? = {customer2.MembershipStatus}");
-            
+            order order1 = new order(erik, kebab);
+            order order2 = new order(lise, margherita);
+            order order3 = new order(hans, pepperoni);
 
-            customer1.joinClub();
-            Console.WriteLine($"{customer1.CustomerName} joins the club");
-            Console.WriteLine($"{customer1.CustomerName} is a member? = {customer1.MembershipStatus}");
-            Console.WriteLine($"{customer2.CustomerName} is a member? = {customer2.MembershipStatus}");
-            
+            hans.joinClub();
+
+            Console.WriteLine(order1);
+            Console.WriteLine($"Total Price: {order1.CalculateTotalPrice():C}\n");
+
+            Console.WriteLine(order2);
+            Console.WriteLine($"Total Price: {order2.CalculateTotalPrice():C}\n");
+
+            Console.WriteLine(order3);
+            Console.WriteLine($"Total Price: {order3.CalculateTotalPrice():C}\n");
         }
 
     }

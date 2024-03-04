@@ -2,23 +2,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Pizza_Store
 {
     internal class customer
     {
-        // private string _customerID; not used
+        private string _customerID; // could be used to identify customers in the customer club, is not used in this code however
         private string _customerName;
         private bool _membershipstatus;
-        private order _newOrder;
+        
 
-    //    public string CustomerID
-    //   {
-    //       get { return _customerID; }
-    //  }
+        public string CustomerID
+        {
+            get { return _customerID; }
+        }
 
         public string CustomerName
         {
@@ -42,9 +44,9 @@ namespace Pizza_Store
             if (MembershipStatus ==  false) { MembershipStatus = true; }
         }
 
-        public void placeOrder()
+        public override string ToString()
         {
-            order _newOrder = new order();
+            return $"Customer: {CustomerName} - Membership: {MembershipStatus}";
         }
     }
 }
