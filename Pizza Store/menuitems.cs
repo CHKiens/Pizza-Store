@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Pizza_Store
 {
@@ -10,7 +11,7 @@ namespace Pizza_Store
     {
         private string _itemID;
         private string _itemName;
-        private string _itemDescription;
+        // private string _itemDescription; not used
         private double _price;
 
         public string ItemID
@@ -25,7 +26,7 @@ namespace Pizza_Store
         }
         public string ItemDescription
         { 
-            get { return _itemDescription; } 
+            get { return _itemID; } 
         }
 
         public double Price
@@ -35,14 +36,14 @@ namespace Pizza_Store
 
         public menuitems(string ItemID, string ItemName, double Price)
         {
-            _itemDescription = ItemID;
+            _itemID = ItemID;
             _itemName = ItemName;
             _price = Price;
         }
-
-        public void AddItem()
+        public override string ToString()
         {
-            
+            return $"Pizza: {ItemName} - Price: {Price}";
         }
+        
     }
 }

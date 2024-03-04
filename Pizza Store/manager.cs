@@ -8,5 +8,6 @@ namespace Pizza_Store
 {
     internal class manager
     {
+        //class wasn't needed to complete the assignment
     }
 }
